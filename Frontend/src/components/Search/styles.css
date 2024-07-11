@@ -1,0 +1,63 @@
+.container-search {
+    display: flex;
+    margin-top: 2rem;
+}
+
+h4 {
+    color: var(--color-white);
+    font-family: cursive;
+    font-weight: 100;
+    margin: 2rem 10rem;
+}
+
+.search {
+    height: 4rem;
+    text-align: center;
+    width: 60rem;
+}
+
+.button {
+    background-color: orange;
+    border: none;
+    border-radius: 0 1rem 1rem 0;
+    color: var(--color-white);
+    font-family: cursive;
+    font-size: 3rem;
+    font-weight: 700;
+    height: 4rem;
+    text-align: center;
+}
+
+.error {
+    color: red;
+}
+
+.container-transactions {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.transaction {
+    background-color: var(--color-secondary);
+    border-radius: 2rem;
+    padding: 4rem;
+    margin-top: 1rem;
+}
+
+p {
+    color: var(black);
+    font-family: cursive;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.pagination-btn {
+    background-color: orange;
+    color: var(--color-white);
+    font-family: cursive;
+    font-size: 3rem;
+    font-weight: 700;
+    height: 4rem;
+    margin: 1rem 1rem;
+}

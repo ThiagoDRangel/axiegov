@@ -48,3 +48,11 @@ button {
   height: 3.5rem;
   width: 15rem;
 }
+
+ul, li {
+  list-style: none;
+}
+
+.pagination-ul {
+  display: flex;
+}
