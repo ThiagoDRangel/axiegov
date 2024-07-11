@@ -3,10 +3,13 @@ const fs = require('fs');
 const path = require('path');
 const app = express();
 
-const dataPath = './data/';
+const dataPath = './data/output_json_chunks';
 
 app.use(express.json());
 
+const isJsonFile = (filePath) => {
+    return path.extname(filePath).toLowerCase() === '.json';
+};
 
 app.get('/api/search', (req, res) => {
     const { address } = req.query;
@@ -14,13 +17,16 @@ app.get('/api/search', (req, res) => {
 
     fs.readdirSync(dataPath).forEach(file => {
         const filePath = path.join(dataPath, file);
-        const fileContent = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
-        fileContent.forEach(transaction => {
-            if (transaction.from === address || transaction.to === address) {
-                transactions.push(transaction);
-            }
-        });
+        if (isJsonFile(filePath)) {
+            const fileContent = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+            
+            fileContent.forEach(transaction => {
+                if (transaction.from === address || transaction.to === address) {
+                    transactions.push(transaction);
+                }
+            });
+        }
     });
 
     res.json(transactions);
