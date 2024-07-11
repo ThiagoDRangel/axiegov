@@ -1,24 +1,18 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useFooter } from '../../hooks/useFooter';
+import { ITransaction } from '../../interfaces/ITransactions';
 import './styles.css';
 
 function Search() {
     const [walletAddress, setWalletAddress] = useState<string>('');
-    const [isValidAddress, setIsValidAddress] = useState<boolean>(true);
-    interface Transaction {
-        from: string;
-        to: string;
-        tokenAddress: string;
-        transactionHash: string;
-        value: number;
-        block: number;
-    }
-    
-    const [transactions, setTransactions] = useState<Transaction[]>([]);
+    const [isValidAddress, setIsValidAddress] = useState<boolean>(true);    
+    const [transactions, setTransactions] = useState<ITransaction[]>([]);
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [transactionsPerPage] = useState<number>(10);
+    const { setFooterVisible } = useFooter();
 
-    // Regex para endereço Ethereum válido
+    // Regex for address Ethereum
     const walletAddressRegex = /^0x[a-fA-F0-9]{40}$/;
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -36,18 +30,19 @@ function Search() {
         try {
             const response = await axios.get(`http://localhost:5000/api/search?address=${walletAddress}`);
             setTransactions(response.data);
+            setFooterVisible(false);
         } catch (error) {
             console.error('Error fetching transactions:', error);
             setTransactions([]);
         }
     };
 
-    // Paginação das transações
+    // Pagination
     const indexOfLastTransaction = currentPage * transactionsPerPage;
     const indexOfFirstTransaction = indexOfLastTransaction - transactionsPerPage;
     const currentTransactions = transactions.slice(indexOfFirstTransaction, indexOfLastTransaction);
 
-    // Mudança de página
+    // page change
     const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
     return (
@@ -71,7 +66,7 @@ function Search() {
             </div>
             
             <div className="container-transactions">
-                {currentTransactions.map((transaction: Transaction, index: number) => (
+                {currentTransactions.map((transaction: ITransaction, index: number) => (
                     <div key={index} className="transaction">
                         <p>From: {transaction.from}</p>
                         <p>To: {transaction.to}</p>
@@ -82,7 +77,7 @@ function Search() {
                     </div>
                 ))}
             
-                {/* Paginação */}
+                {/* Pagination */}
                 {transactions.length > transactionsPerPage && (
                     <ul className="pagination-ul">
                         {Array.from({ length: Math.ceil(transactions.length / transactionsPerPage) }).map((_, index) => (

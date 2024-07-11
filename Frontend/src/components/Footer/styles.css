@@ -1,0 +1,16 @@
+.footer {
+    width: 100%;
+    background-color: var(--color-quaternary);
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
