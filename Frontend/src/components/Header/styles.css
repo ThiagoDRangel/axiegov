@@ -1,0 +1,32 @@
+.container-header {
+    align-items: center;
+    background-color: var(--color-white);
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-icon {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.icon-ronin {
+    height: 8rem;
+    margin-left: 3rem;
+}
+
+.title {
+    color: var(--color-tertiary);
+    font-family: cursive;
+    font-size: 3rem;
+    margin-left: 2rem;
+
+}
+
+.connect-btn {
+    font-weight: 700;
+    height: 5rem;
+    margin-right: 3rem;
+    width: 20rem;
+}
