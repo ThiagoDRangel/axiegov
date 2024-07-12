@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useFooter } from '../../hooks/useFooter';
 import { ITransaction } from '../../interfaces/ITransactions';
+import TransactionsChart from '../TransactionsChart';
 import './styles.css';
 
 function Search() {
@@ -64,6 +65,9 @@ function Search() {
                 </button>
                 {!isValidAddress && <p className="error">Invalid address</p>}
             </div>
+
+            {/* Renderizar o componente de gráficos se houver transações */}
+            {transactions.length > 0 && <TransactionsChart transactions={transactions} />}
             
             <div className="container-transactions">
                 {currentTransactions.map((transaction: ITransaction, index: number) => (

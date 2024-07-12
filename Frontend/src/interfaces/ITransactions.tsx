@@ -6,3 +6,7 @@ export interface ITransaction {
     value: number;
     block: number;
 }
+
+export interface ITransactionsChartProps {
+    transactions: ITransaction[];
+}

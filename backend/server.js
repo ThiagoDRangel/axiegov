@@ -1,10 +1,12 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const cors = require('cors');
 const app = express();
 
 const dataPath = './data/output_json_chunks';
 
+app.use(cors());
 app.use(express.json());
 
 const isJsonFile = (filePath) => {
