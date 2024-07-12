@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useFooter } from '../../hooks/useFooter';
 import { ITransaction } from '../../interfaces/ITransactions';
 import TransactionsChart from '../TransactionsChart';
+import TransactionsPieChart from '../TransactionsPieChart';
 import './styles.css';
 
 function Search() {
@@ -66,8 +67,17 @@ function Search() {
                 {!isValidAddress && <p className="error">Invalid address</p>}
             </div>
 
-            {/* Renderizar o componente de gráficos se houver transações */}
-            {transactions.length > 0 && <TransactionsChart transactions={transactions} />}
+            {/* Renderizar os gráficos se houver transações */}
+            {transactions.length > 0 && (
+            <ul className="graphs-items">
+                <li className="graph-transaction">
+                    <TransactionsChart transactions={transactions} />
+                </li>
+                <li className="graph-pie">
+                    <TransactionsPieChart transactions={transactions} />
+                </li>
+            </ul>
+            )}
             
             <div className="container-transactions">
                 {currentTransactions.map((transaction: ITransaction, index: number) => (

@@ -64,3 +64,27 @@ p {
     height: 4rem;
     margin: 1rem 1rem;
 }
+
+.graphs-items {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.graph-transaction {
+    flex: 1;
+    margin: 0 1rem;
+}
+
+.graph-pie {
+    flex: 2;
+    position: relative;
+    max-width: 60rem;
+}
+
+.graph-pie .chartjs-legend {
+    position: absolute;
+}
+
+  
