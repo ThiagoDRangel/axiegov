@@ -1,30 +1,33 @@
-# React + TypeScript + Vite
+# App Axie Gov Data Hackathon
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An application where the user provides a valid ronin wallet and views graphs of the latest transactions and all blocks of transactions found are listed below.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### How to use
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+1 - Copy the git repository
+```bash
+git clone git@github.com:ThiagoDRangel/axiegov.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2 - Access the Frontend folder
+```bash
+cd Frontend
+```
+
+3 - Install the dependencies
+```bash
+yarn install
+```
+
+4 - Get the server up and running
+```bash
+yarn dev
+```
+
+### Other forms of use
+
+It is also possible to use the Frontend via the link.
+https://axiegov.vercel.app/
+
+**Note:** Please ensure the backend server is running locally.
