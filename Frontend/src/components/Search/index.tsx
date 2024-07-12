@@ -13,6 +13,7 @@ function Search() {
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [transactionsPerPage] = useState<number>(10);
     const { setFooterVisible } = useFooter();
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
     // Regex for address Ethereum
     const walletAddressRegex = /^0x[a-fA-F0-9]{40}$/;
@@ -29,6 +30,7 @@ function Search() {
             return;
         }
         
+        setIsLoading(true);
         try {
             const response = await axios.get(`http://localhost:5000/api/search?address=${walletAddress}`);
             setTransactions(response.data);
@@ -36,6 +38,8 @@ function Search() {
         } catch (error) {
             console.error('Error fetching transactions:', error);
             setTransactions([]);
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -44,7 +48,7 @@ function Search() {
     const indexOfFirstTransaction = indexOfLastTransaction - transactionsPerPage;
     const currentTransactions = transactions.slice(indexOfFirstTransaction, indexOfLastTransaction);
 
-    // page change
+    // Page change
     const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
     return (
@@ -67,16 +71,21 @@ function Search() {
                 {!isValidAddress && <p className="error">Invalid address</p>}
             </div>
 
-            {/* Renderizar os gráficos se houver transações */}
+            {isLoading && (
+                <div className="loading-spinner">
+                    <div className="spinner"></div>
+                </div>
+            )}
+
             {transactions.length > 0 && (
-            <ul className="graphs-items">
-                <li className="graph-transaction">
-                    <TransactionsChart transactions={transactions} />
-                </li>
-                <li className="graph-pie">
-                    <TransactionsPieChart transactions={transactions} />
-                </li>
-            </ul>
+                <ul className="graphs-items">
+                    <li className="graph-transaction">
+                        <TransactionsChart transactions={transactions} />
+                    </li>
+                    <li className="graph-pie">
+                        <TransactionsPieChart transactions={transactions} />
+                    </li>
+                </ul>
             )}
             
             <div className="container-transactions">
