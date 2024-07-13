@@ -1,16 +1,155 @@
 .footer {
-    width: 100%;
+    align-items: center;
     background-color: var(--color-quaternary);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
     text-align: center;
     padding: 10px;
     position: fixed;
     bottom: 0;
     height: 5%;
-    display: flex;
-    justify-content: center;
+}
+
+.footer-title {
+    flex: 1;
+    margin-left: 20rem;
+}
+
+.container-copy {
     align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 8rem;
 }
 
 .hidden {
     display: none;
+}
+
+.copy-icon {
+    margin-left: 1rem;
+    cursor: pointer;
+    transition: color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+.copied-message {
+    margin-left: 0.5rem;
+    color: var(--color-white);
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 120%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+}
+
+@media (max-width:1025px) {
+  .footer-title {
+    font-size: 1.2rem;
+  }
+
+  .container-copy {
+    margin-right: 6rem;
+  }
+
+  .container-copy p {
+    font-size: 1.2rem;
+  }
+
+  .img-icon {
+    width: 2rem;
+  }
+
+  .copied-message {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width:801px) { 
+    .footer-title {
+        font-size: 1rem;
+        margin-left: 10rem;
+    }
+    
+    .container-copy {
+        margin-right: 5rem;
+    }
+
+    .container-copy p {
+        font-size: 1rem;
+    }
+
+    .img-icon {
+        width: 1.6rem;
+    }
+
+    .copied-message {
+        font-size: 1.3rem;
+    }
+}
+@media (max-width:600px) {
+    .footer {
+        align-items: center;
+        flex-direction: column;
+        height: 8%;
+    }
+    .footer-title {
+        font-size: 1.2rem;
+        margin: 0;
+    }
+
+    .container-copy {
+        margin: 0;
+    }
+
+    .container-copy p {
+        font-size: 1.2rem;
+    }
+
+    .img-icon {
+        width: 1.6rem;
+    }
+
+    .copied-message {
+        font-size: 1rem;
+    }
+}
+@media (max-width:480px) {
+    
+    .footer-title {
+        font-size: 1rem;
+    }
+
+    .container-copy p {
+        font-size: 1rem;
+    }
+
+    .img-icon {
+        width: 1.6rem;
+    }
+
+    .copied-message {
+        font-size: 1rem;
+    }
+}
+@media (max-width:320px) {
+    .footer-title {
+        font-size: 1rem;
+    }
+
+    .container-copy p {
+        font-size: 1rem;
+    }
+
+    .img-icon {
+        width: 1.5rem;
+    }
+
+    .copied-message {
+        font-size: 1rem;
+    }
 }

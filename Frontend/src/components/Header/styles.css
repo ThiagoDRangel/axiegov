@@ -2,7 +2,10 @@
     align-items: center;
     background-color: var(--color-white);
     display: flex;
+    height: 8rem;
     justify-content: space-between;
+    width: 100vw;
+    box-sizing: border-box;
 }
 
 .container-icon {
@@ -27,6 +30,83 @@
 .connect-btn {
     font-weight: 700;
     height: 5rem;
-    margin-right: 3rem;
+    margin-right: 4rem;
     width: 20rem;
+}
+
+@media (max-width:801px) {
+    .icon-ronin {
+        height: 5rem;
+        margin-left: 6rem;
+    }
+
+    .title {
+        font-size: 1.8rem;
+        margin-left: 2rem;
+    }
+
+    .connect-btn {
+        font-size: 1.6rem;
+        font-weight: 700;
+        height: 4rem;
+        margin-right: 6rem;
+        width: 14rem;
+    }
+}
+
+@media (max-width:600px) {
+
+    .icon-ronin {
+        height: 5.5rem;
+        margin-left: 2rem;
+    }
+
+    .title {
+        font-size: 1.7rem;
+        margin-left: 2rem;
+    }
+
+    .connect-btn {
+        font-size: 1.4rem;
+        height: 4rem;
+        margin-right: 2rem;
+        width: 12rem;
+    }
+}
+
+@media (max-width:480px) {
+    .icon-ronin {
+        height: 4.5rem;
+        margin-left: 1rem;
+    }
+
+    .title {
+        font-size: 1.3rem;
+        margin-left: 1rem;
+    }
+
+    .connect-btn {
+        height: 4rem;
+        margin-right: 1.4rem;
+        width: 10rem;
+    }
+}
+
+@media (max-width:320px) {
+    .icon-ronin {
+        height: 4.2rem;
+        margin-left: 1rem;
+    }
+
+    .title {
+        font-size: 1.2rem;
+        margin-left: 0.8rem;
+    }
+
+    .connect-btn {
+        font-size: 1.4rem;
+        height: 4rem;
+        margin-right: 1.4rem;
+        width: 10rem;
+    }
 }
