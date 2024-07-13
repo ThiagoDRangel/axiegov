@@ -5,7 +5,6 @@
 
 h4 {
     color: var(--color-white);
-    font-family: cursive;
     font-weight: 100;
     margin: 2rem 10rem;
 }
@@ -21,7 +20,6 @@ h4 {
     border: none;
     border-radius: 0 1rem 1rem 0;
     color: var(--color-white);
-    font-family: cursive;
     font-size: 3rem;
     font-weight: 700;
     height: 4rem;
@@ -51,21 +49,21 @@ h4 {
 
 p {
     color: var(black);
-    font-family: cursive;
     font-size: 1.4rem;
 }
 
 .pagination-btn {
     background-color: orange;
     color: var(--color-white);
-    font-family: cursive;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     height: 4rem;
-    margin: 1rem 1rem;
+    margin: 1rem 0.5rem 0.5rem 0.5rem;
+    width: 6rem;
 }
 
 .graphs-items {
+    align-items: center;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -75,12 +73,15 @@ p {
 .graph-transaction {
     flex: 1;
     margin: 0 1rem;
+    max-width: 100%;
+    min-height: 45rem;
 }
 
 .graph-pie {
     flex: 2;
     position: relative;
-    max-width: 60rem;
+    min-height: 30rem;
+    max-width: 50rem;
 }
 
 .graph-pie .chartjs-legend {
@@ -119,7 +120,22 @@ p {
         font-size: 2rem;
         width: 14rem;
     }
+
+    .graphs-items {
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .graph-transaction {
+        margin: 0 1rem;
+    }
+    
+    .graph-pie {
+        max-width: 50rem;
+    }
 }
+
 @media (max-width:1025px) {
     h4 {
         margin: 2rem 3rem;
@@ -130,6 +146,16 @@ p {
     .button {
         font-size: 1.7rem;
         width: 12rem;
+    }
+
+    .graph-transaction {
+        display: block;
+        height: auto;
+        width: 100%;
+    }
+    
+    .graph-pie {
+        max-width: 50rem;
     }
 }
 @media (max-width:801px) { 
@@ -144,7 +170,31 @@ p {
         font-size: 1.7rem;
         width: 10rem;
     }
+
+    .transaction {
+        padding: 2rem;
+        margin-top: 1.4rem;
+        width: 55rem;
+    }
+
+    .transaction p {
+        font-size: 1.1rem;
+    }
+
+    .pagination-ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 1rem;
+    }
+
+    .pagination-btn {
+        font-size: 1.7rem;
+        height: 3rem;
+        margin: 0.5rem 0.5rem 0.5rem 1;
+        width: 4.5rem;
+    }
 }
+
 @media (max-width:600px) {
     .container-search {
         align-items: center;
@@ -164,7 +214,34 @@ p {
         margin-top: 1rem;
         width: 14rem;
     }
+
+    .transaction {
+        padding: 1rem;
+        width: 45rem;
+    }
+
+    .transaction p {
+        font-size: 1.1rem;
+    }
+
+    .pagination-ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 1rem;
+    }
+
+    .pagination-btn {
+        font-size: 1.7rem;
+        height: 3rem;
+        margin: 0.4rem 0.4rem 0.4rem 1;
+        width: 4rem;
+    }
+
+    .graph-transaction {
+        min-height: 30rem;
+    }    
 }
+
 @media (max-width:480px) {
     h4 {
         font-size: 1.4rem;
@@ -179,7 +256,37 @@ p {
         margin-top: 1rem;
         width: 12rem;
     }
+
+    .transaction {
+        padding: 1rem;
+        width: 30rem;
+    }
+
+    .transaction p {
+        font-size: 0.8rem;
+    }
+
+    .pagination-ul {
+        margin-left: 1rem;
+    }
+
+    .pagination-btn {
+        font-size: 1.7rem;
+        height: 2.5rem;
+        margin: 0.5rem 0.2rem 0.5rem 0.5rem;
+        width: 3rem;
+    }
+
+    .graph-transaction {
+        min-height: 20rem;
+    }
+
+    .graph-pie {
+        min-height: 5rem;
+        width: 25rem;
+    }
 }
+
 @media (max-width:320px) {
     h4 {
         font-size: 1.4rem;
@@ -193,5 +300,29 @@ p {
         border-radius: 1rem;
         margin-top: 1rem;
         width: 12rem;
+    }
+
+    .transaction {
+        padding: 0.8rem;
+        width: 26rem;
+    }
+
+    .transaction p {
+        font-size: 0.65rem;
+    }
+
+    .pagination-ul {
+        margin-left: 1rem;
+    }
+
+    .pagination-btn {
+        font-size: 1.5rem;
+        height: 2rem;
+        margin: 0.4rem 0.2rem 0.4rem 0.4rem;
+        width: 2.5rem;
+    }
+
+    .graph-pie {
+        width: 20rem;
     }
 }

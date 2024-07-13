@@ -21,10 +21,8 @@
 
 .title {
     color: var(--color-tertiary);
-    font-family: cursive;
     font-size: 3rem;
     margin-left: 2rem;
-
 }
 
 .connect-btn {
@@ -88,7 +86,6 @@
     .connect-btn {
         height: 4rem;
         margin-right: 1.4rem;
-        width: 10rem;
     }
 }
 
@@ -107,6 +104,5 @@
         font-size: 1.4rem;
         height: 4rem;
         margin-right: 1.4rem;
-        width: 10rem;
     }
 }
