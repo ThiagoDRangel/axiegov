@@ -1,11 +1,11 @@
 .container-search {
+    align-items: center;
     display: flex;
     margin-top: 2rem;
 }
 
 h4 {
-    color: var(--color-white);
-    font-weight: 100;
+    color: var(--color-secondary);
     margin: 2rem 10rem;
 }
 
@@ -16,10 +16,8 @@ h4 {
 }
 
 .button {
-    background-color: orange;
     border: none;
     border-radius: 0 1rem 1rem 0;
-    color: var(--color-white);
     font-size: 3rem;
     font-weight: 700;
     height: 4rem;
@@ -53,8 +51,6 @@ p {
 }
 
 .pagination-btn {
-    background-color: orange;
-    color: var(--color-white);
     font-size: 2.5rem;
     font-weight: 700;
     height: 4rem;
@@ -97,7 +93,7 @@ p {
 
 .spinner {
     border: 8px solid rgba(255, 255, 255, 0.3);
-    border-top: 8px solid orange;
+    border-top: 8px solid var(--color-quaternary);
     border-radius: 50%;
     width: 5rem;
     height: 5rem;

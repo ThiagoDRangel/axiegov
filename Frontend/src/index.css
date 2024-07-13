@@ -1,11 +1,8 @@
 :root {
-  --color-primary: #9c44dc;
-  --color-secondary: #bc8ae1;
-  --color-tertiary: #442c61;
-  --color-quaternary: #e0d4b7;
-  --color-quinary: #d0b7b0;
-  --color-senary: #543b6c;
-  --color-white: #fff;
+  --color-primary: #333333;
+  --color-secondary: #ffffff;
+  --color-tertiary: #d4af37;
+  --color-quaternary: #003366;
 }
 
 * {
@@ -26,7 +23,7 @@ html {
 }
 
 body {
-  background-color: var(--color-tertiary);
+  background-color: var(--color-primary);
   box-sizing: border-box;
   font-size: 1.6rem;
   font-family: 'Inter', sans-serif;
@@ -42,6 +39,8 @@ body {
 }
 
 button {
+  color: var(--color-secondary);
+  background-color: var(--color-quaternary);
   border: none;
   border-radius: 1rem;
   cursor: pointer;

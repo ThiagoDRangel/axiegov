@@ -1,6 +1,6 @@
 .container-header {
     align-items: center;
-    background-color: var(--color-white);
+    background-color: var(--color-secondary);
     display: flex;
     height: 8rem;
     justify-content: space-between;
@@ -20,7 +20,7 @@
 }
 
 .title {
-    color: var(--color-tertiary);
+    color: var(--color-primary);
     font-size: 3rem;
     margin-left: 2rem;
 }

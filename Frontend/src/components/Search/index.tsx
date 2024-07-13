@@ -66,7 +66,7 @@ function Search() {
                     className="button"
                     onClick={handleButtonClick}
                 >
-                    start
+                    Start
                 </button>
                 {!isValidAddress && <p className="error">Invalid address</p>}
             </div>
