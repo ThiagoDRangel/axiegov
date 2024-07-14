@@ -1,0 +1,74 @@
+.button-connect {
+    font-weight: 700;
+    height: 5rem;
+    margin-right: 4rem;
+    width: 20rem;
+}
+
+.connect-wallet-container {
+    position: relative;
+    display: inline-block;
+}
+  
+.copied-notification {
+    position: absolute;
+    left: 44%;
+    transform: translateX(-50%);
+    background-color: green;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0;
+    animation: fadeInOut 1.3s forwards;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@media (max-width:801px) {
+    .button-connect {
+        font-size: 1.6rem;
+        font-weight: 700;
+        height: 4rem;
+        margin-right: 6rem;
+        width: 14rem;
+    }
+}
+
+@media (max-width:600px) {
+    .button-connect {
+        font-size: 1.4rem;
+        height: 4rem;
+        margin-right: 2rem;
+        width: 12rem;
+    }
+}
+
+
+@media (max-width:480px) {
+    .button-connect {
+        height: 4rem;
+        margin-right: 1.4rem;
+    }
+}
+
+@media (max-width:320px) {
+    .button-connect {
+        font-size: 1.4rem;
+        height: 4rem;
+        margin-right: 1.4rem;
+    }
+}

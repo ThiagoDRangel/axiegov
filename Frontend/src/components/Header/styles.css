@@ -25,13 +25,6 @@
     margin-left: 2rem;
 }
 
-.connect-btn {
-    font-weight: 700;
-    height: 5rem;
-    margin-right: 4rem;
-    width: 20rem;
-}
-
 @media (max-width:801px) {
     .icon-ronin {
         height: 5rem;

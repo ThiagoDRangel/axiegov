@@ -1,8 +1,10 @@
 import icon from '../../assets/icon_ronin.png';
+import ConnectRoninWalletButton from '../ConnectWallet';
 import './styles.css';
 
 
 function Header () {
+
   return (
     <header className="container-header">
         <div className="container-icon">
@@ -13,11 +15,9 @@ function Header () {
           />
           <h1 className="title">Ronin Graphics</h1>
         </div>
-        <button
-          className="connect-btn"
-        >
-          Connect Wallet
-        </button>
+        <div>
+          <ConnectRoninWalletButton onConnected={() => {}} />
+        </div>
     </header>
   );
 }

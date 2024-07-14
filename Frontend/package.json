@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@roninnetwork/wallet-sdk": "^1.1.0",
     "@types/chart.js": "^2.9.41",
+    "@walletconnect/modal": "^2.6.2",
     "axios": "^1.7.2",
     "chart.js": "^4.4.3",
     "react": "^18.3.1",
